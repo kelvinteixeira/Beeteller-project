@@ -8,7 +8,6 @@ import {
   Typography,
   Container,
   Avatar,
-  Button,
   MenuItem,
 } from "@mui/material";
 
@@ -16,8 +15,9 @@ import MenuIcon from "@mui/icons-material/Menu";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import DragHandleIcon from "@mui/icons-material/DragHandle";
 
-import beetellerLogoSVG from "../assets/Beeteller.svg";
-import userImageProfile from "../assets/avatar.jpg";
+import beetellerLogoSVG from "../../assets/Beeteller.svg";
+import userImageProfile from "../../assets/avatar.jpg";
+import { StyledButton } from "./Header.styles";
 
 const pages = ["Home", "Extrato", "Área pix", "Cartão de crédito"];
 
@@ -108,21 +108,14 @@ export const Header = () => {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
-              <Button
+              <StyledButton
                 color="inherit"
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{
-                  my: 2,
-                  color: "black",
-                  display: "block",
-                  textTransform: "none",
-                  borderRadius: 2,
-                  padding: 1,
-                }}
+                
               >
                 {page}
-              </Button>
+              </StyledButton>
             ))}
           </Box>
 

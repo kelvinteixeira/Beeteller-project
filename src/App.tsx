@@ -1,12 +1,12 @@
-import { Dashboard } from "./pages/Dashboard/Dashboard";
+import { Home } from "./pages/Home/Home";
 import "./Global.css";
-import { Header } from "./components/Header";
+import { Header } from "./components/Header/Header";
 
 function App() {
   return (
     <>
       <Header />
-      <Dashboard />
+      <Home />
     </>
   );
 }
