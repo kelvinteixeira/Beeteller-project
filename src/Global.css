@@ -1,10 +1,18 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Open Sans', sans-serif !important;
+  font-family: "Open Sans", sans-serif !important;
 }
 
 html {
-  background-color: #E0E0E0;
+  background-color: #ededed;
+}
+
+.negative-value {
+  color: red;
+}
+
+.positive-value {
+  color: green;
 }

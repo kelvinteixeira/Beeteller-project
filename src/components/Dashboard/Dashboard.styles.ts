@@ -8,6 +8,7 @@ export const GridStyled =styled(Grid)`
 export const StyledTypography = styled(Typography)`
   font-weight: 600;
   font-size: .9rem;
+  color: #666666;
 `;
 export const CustomerName = styled(Typography)`
   font-weight: 600;

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import { DashboardCard } from "../../components/DashboardCard/DashboardCard";
+import { DashboardCard } from "./DashboardCard/DashboardCard";
 
 import { Grid } from "@mui/material";
 import { StyledTypography, CustomerName, GridStyled } from "./Dashboard.styles";

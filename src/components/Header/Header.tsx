@@ -41,7 +41,7 @@ export const Header = () => {
     <AppBar
       position="static"
       variant="outlined"
-      sx={{ backgroundColor: "#E0E0E0" }}
+      sx={{ backgroundColor: "#EDEDED" }}
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
@@ -112,7 +112,6 @@ export const Header = () => {
                 color="inherit"
                 key={page}
                 onClick={handleCloseNavMenu}
-                
               >
                 {page}
               </StyledButton>
@@ -120,14 +119,22 @@ export const Header = () => {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <IconButton sx={{ p: 1.5 }}>
+            <IconButton
+              sx={{ width: 56, height: 56, marginRight: 2, backgroundColor: "#E0E0E0" }}
+            >
               <NotificationsNoneIcon sx={{ color: "#000000" }} />
             </IconButton>
-            <IconButton sx={{ p: 1.5 }}>
+            <IconButton
+              sx={{ width: 56, height: 56, marginRight: 2, backgroundColor: "#E0E0E0" }}
+            >
               <DragHandleIcon sx={{ color: "#000000" }} />
             </IconButton>
-            <IconButton sx={{ p: 1.5 }}>
-              <Avatar alt="Foto do usuário" src={userImageProfile} />
+            <IconButton>
+              <Avatar
+                sx={{ width: 56, height: 56 }}
+                alt="Foto do usuário"
+                src={userImageProfile}
+              />
             </IconButton>
             <Menu
               sx={{ mt: "45px" }}

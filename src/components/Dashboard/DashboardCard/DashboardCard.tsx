@@ -7,8 +7,8 @@ import {
   StyledCard,
   StyledTypography,
 } from "./DashboardCard.styles";
-import { formatCurrencyBRL } from "../../utils/date";
-import { BeetellerButton } from "../BeetellerButton/BeetellerButon";
+import { formatCurrencyBRL } from "../../../utils/currency";
+import { BeetellerButton } from "../../BeetellerButton/BeetellerButon";
 
 type InfoCardProps = {
   title: string;
