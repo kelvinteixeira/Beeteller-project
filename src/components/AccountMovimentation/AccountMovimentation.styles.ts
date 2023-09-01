@@ -21,6 +21,7 @@ export const CardMovimentation = styled(Grid)`
   background-color: #E0E0E0;
   border-radius: .5rem;
   padding: 1.5rem;
+  margin-bottom: 1rem;
 `;
 
 export const StyledBox = styled(Box)`

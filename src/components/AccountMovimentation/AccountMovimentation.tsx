@@ -14,7 +14,7 @@ import { useState } from "react";
 export const AccountMovimentation = () => {
   const [value, setValue] = useState(false);
   return (
-    <>
+    <Grid>
       <GridStyled>
         <Grid container alignItems={"center"}>
           <StyledTitle>Conta digital</StyledTitle>
@@ -39,6 +39,60 @@ export const AccountMovimentation = () => {
           + R$ 3000,00
         </StyledCardValue>
       </CardMovimentation>
-    </>
+      <CardMovimentation
+        container
+        alignContent={"center"}
+        justifyContent={"space-between"}
+      >
+        <StyledBox>
+          <img src={walletSVG} />
+          <StyledCardTitle sx={{ marginLeft: 1, lineHeight: 2 }}>
+            Conta corrente
+          </StyledCardTitle>
+        </StyledBox>
+        <StyledCardTitle sx={{ lineHeight: 2 }}>Pagemento de boleto via Pix</StyledCardTitle>
+        <StyledCardValue
+          className={value ? "positive-value" : "negative-value"}
+        >
+          + R$ 3000,00
+        </StyledCardValue>
+      </CardMovimentation>
+      <CardMovimentation
+        container
+        alignContent={"center"}
+        justifyContent={"space-between"}
+      >
+        <StyledBox>
+          <img src={walletSVG} />
+          <StyledCardTitle sx={{ marginLeft: 1, lineHeight: 2 }}>
+            Conta corrente
+          </StyledCardTitle>
+        </StyledBox>
+        <StyledCardTitle sx={{ lineHeight: 2 }}>Pagemento de boleto via Pix</StyledCardTitle>
+        <StyledCardValue
+          className={value ? "positive-value" : "negative-value"}
+        >
+          + R$ 3000,00
+        </StyledCardValue>
+      </CardMovimentation>
+      <CardMovimentation
+        container
+        alignContent={"center"}
+        justifyContent={"space-between"}
+      >
+        <StyledBox>
+          <img src={walletSVG} />
+          <StyledCardTitle sx={{ marginLeft: 1, lineHeight: 2 }}>
+            Conta corrente
+          </StyledCardTitle>
+        </StyledBox>
+        <StyledCardTitle sx={{ lineHeight: 2 }}>Pagemento de boleto via Pix</StyledCardTitle>
+        <StyledCardValue
+          className={value ? "positive-value" : "negative-value"}
+        >
+          + R$ 3000,00
+        </StyledCardValue>
+      </CardMovimentation>
+    </Grid>
   );
 };
