@@ -1,3 +1,4 @@
+import { ReactNode, useEffect, useState } from "react";
 import { Grid } from "@mui/material";
 import {
   GridStyled,
@@ -8,11 +9,28 @@ import {
   StyledCardTitle,
   StyledCardValue,
 } from "./AccountMovimentation.styles";
-import walletSVG from "../../assets/blackwallet.svg";
-import { useState } from "react";
+
+import { api } from "../../lib/axios";
+import { formatCurrencyBRL } from "../../utils/currency";
+
+import blackWalletSVG from "../../assets/blackwallet.svg";
+import blackInvestimentSVG from "../../assets/blackInvestment.svg";
+
+type AccountMovimentationItems = {
+  id: number;
+  account: string;
+  compensationType: string;
+  description: string;
+  amount: number;
+  icon: ReactNode;
+};
 
 export const AccountMovimentation = () => {
-  const [value, setValue] = useState(false);
+  const [data, setData] = useState<Array<AccountMovimentationItems>>([]);
+
+  useEffect(() => {
+    api.get("/movement").then((response) => setData(response.data));
+  }, []);
   return (
     <Grid>
       <GridStyled>
@@ -21,78 +39,43 @@ export const AccountMovimentation = () => {
           <StyledSubtitle>&nbsp; Últimas movimentações</StyledSubtitle>
         </Grid>
       </GridStyled>
-      <CardMovimentation
-        container
-        alignContent={"center"}
-        justifyContent={"space-between"}
-      >
-        <StyledBox>
-          <img src={walletSVG} />
-          <StyledCardTitle sx={{ marginLeft: 1, lineHeight: 2 }}>
-            Conta corrente
-          </StyledCardTitle>
-        </StyledBox>
-        <StyledCardTitle sx={{ lineHeight: 2 }}>Pagemento de boleto via Pix</StyledCardTitle>
-        <StyledCardValue
-          className={value ? "positive-value" : "negative-value"}
+      {data.map((item) => (
+        <CardMovimentation
+          key={item.id}
+          container
+          alignContent={"center"}
+          justifyContent={"space-between"}
         >
-          + R$ 3000,00
-        </StyledCardValue>
-      </CardMovimentation>
-      <CardMovimentation
-        container
-        alignContent={"center"}
-        justifyContent={"space-between"}
-      >
-        <StyledBox>
-          <img src={walletSVG} />
-          <StyledCardTitle sx={{ marginLeft: 1, lineHeight: 2 }}>
-            Conta corrente
+          <StyledBox>
+            <img
+              src={
+                item.account === "CURRENT"
+                  ? blackWalletSVG
+                  : blackInvestimentSVG
+              }
+            />
+            <StyledCardTitle sx={{ marginLeft: 1, lineHeight: 2 }}>
+              {item.account === "CURRENT"
+                ? "Conta corrente"
+                : "Conta investimento"}
+            </StyledCardTitle>
+          </StyledBox>
+          <StyledCardTitle sx={{ lineHeight: 2 }}>
+            {item.description}
           </StyledCardTitle>
-        </StyledBox>
-        <StyledCardTitle sx={{ lineHeight: 2 }}>Pagemento de boleto via Pix</StyledCardTitle>
-        <StyledCardValue
-          className={value ? "positive-value" : "negative-value"}
-        >
-          + R$ 3000,00
-        </StyledCardValue>
-      </CardMovimentation>
-      <CardMovimentation
-        container
-        alignContent={"center"}
-        justifyContent={"space-between"}
-      >
-        <StyledBox>
-          <img src={walletSVG} />
-          <StyledCardTitle sx={{ marginLeft: 1, lineHeight: 2 }}>
-            Conta corrente
-          </StyledCardTitle>
-        </StyledBox>
-        <StyledCardTitle sx={{ lineHeight: 2 }}>Pagemento de boleto via Pix</StyledCardTitle>
-        <StyledCardValue
-          className={value ? "positive-value" : "negative-value"}
-        >
-          + R$ 3000,00
-        </StyledCardValue>
-      </CardMovimentation>
-      <CardMovimentation
-        container
-        alignContent={"center"}
-        justifyContent={"space-between"}
-      >
-        <StyledBox>
-          <img src={walletSVG} />
-          <StyledCardTitle sx={{ marginLeft: 1, lineHeight: 2 }}>
-            Conta corrente
-          </StyledCardTitle>
-        </StyledBox>
-        <StyledCardTitle sx={{ lineHeight: 2 }}>Pagemento de boleto via Pix</StyledCardTitle>
-        <StyledCardValue
-          className={value ? "positive-value" : "negative-value"}
-        >
-          + R$ 3000,00
-        </StyledCardValue>
-      </CardMovimentation>
+          <StyledCardValue
+          sx={{ lineHeight: 2 }}
+            className={
+              item.compensationType === "CREDIT"
+                ? "positive-value"
+                : "negative-value"
+            }
+          >
+            {item.compensationType === "CREDIT" ? "+ " : "- "}
+            R$ {formatCurrencyBRL(item.amount)}
+          </StyledCardValue>
+        </CardMovimentation>
+      ))}
     </Grid>
   );
 };

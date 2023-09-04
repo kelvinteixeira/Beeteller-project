@@ -22,6 +22,7 @@ export const CardMovimentation = styled(Grid)`
   border-radius: .5rem;
   padding: 1.5rem;
   margin-bottom: 1rem;
+  grid-column: 2fr 2fr auto;
 `;
 
 export const StyledBox = styled(Box)`
@@ -31,9 +32,12 @@ export const StyledBox = styled(Box)`
 
 export const StyledCardTitle = styled(Typography)`
   font-weight: 600;
-  font-size: .9rem;
+  font-size: .9rem;  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
 `;
 export const StyledCardValue = styled(Typography)`
   font-weight: 600;
   font-size: .9rem;
+
 `;

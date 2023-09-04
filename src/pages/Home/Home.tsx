@@ -7,7 +7,7 @@ export const Home = () => {
   return (
     <Container>
       <Dashboard />
-      <Grid container justifyContent={'space-between'}>
+      <Grid container justifyContent={"space-between"}>
         <AccountMovimentation />
         <OffersCard />
       </Grid>
