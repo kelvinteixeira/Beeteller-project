@@ -1,4 +1,4 @@
-import { Box, Card, Grid, Typography, styled } from "@mui/material";
+import { Box, Button, Card, Grid, Typography, styled } from "@mui/material";
 
 export const GridStyled = styled(Grid)`
   padding: 1rem 0 1rem 0;
@@ -44,4 +44,17 @@ export const OffersValue = styled(Typography)`
   font-weight: 600;
   font-size: 1.5rem;
   color: #000000;
+`;
+export const StyledButton = styled(Button)`
+  text-transform: none;
+  background-color: #f1cd6d;
+  color: #000000;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  font-size: .7rem;
+  text-align: left;
+
+  &:hover {
+    background-color: #ebb932 !important;
+  }
 `;

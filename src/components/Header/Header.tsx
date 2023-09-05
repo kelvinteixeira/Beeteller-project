@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Menu,
   AppBar,
@@ -9,6 +9,7 @@ import {
   Container,
   Avatar,
   MenuItem,
+  Skeleton,
 } from "@mui/material";
 
 import MenuIcon from "@mui/icons-material/Menu";
@@ -18,12 +19,18 @@ import DragHandleIcon from "@mui/icons-material/DragHandle";
 import beetellerLogoSVG from "../../assets/Beeteller.svg";
 import userImageProfile from "../../assets/avatar.jpg";
 import { StyledButton } from "./Header.styles";
+import { api } from "../../lib/axios";
 
 const pages = ["Home", "Extrato", "Área pix", "Cartão de crédito"];
 
 export const Header = () => {
+  const [data, setData] = useState();
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
   const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
+
+  useEffect(() => {
+    api.get("/dashboard").then((response) => setData(response.data));
+  }, []);
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
@@ -107,25 +114,44 @@ export const Header = () => {
             <img src={beetellerLogoSVG} alt="Beeteler nome" />
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
-              <StyledButton
-                color="inherit"
-                key={page}
-                onClick={handleCloseNavMenu}
-              >
-                {page}
-              </StyledButton>
-            ))}
+            {pages.map((page) =>
+              !data ? (
+                <Skeleton
+                  sx={{ marginRight: 3 }}
+                  animation="wave"
+                  width="10%"
+                />
+              ) : (
+                <StyledButton
+                  color="inherit"
+                  key={page}
+                  onClick={handleCloseNavMenu}
+                >
+                  {page}
+                </StyledButton>
+              )
+            )}
+            ,
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
             <IconButton
-              sx={{ width: 56, height: 56, marginRight: 2, backgroundColor: "#E0E0E0" }}
+              sx={{
+                width: 56,
+                height: 56,
+                marginRight: 2,
+                backgroundColor: "#E0E0E0",
+              }}
             >
               <NotificationsNoneIcon sx={{ color: "#000000" }} />
             </IconButton>
             <IconButton
-              sx={{ width: 56, height: 56, marginRight: 2, backgroundColor: "#E0E0E0" }}
+              sx={{
+                width: 56,
+                height: 56,
+                marginRight: 2,
+                backgroundColor: "#E0E0E0",
+              }}
             >
               <DragHandleIcon sx={{ color: "#000000" }} />
             </IconButton>

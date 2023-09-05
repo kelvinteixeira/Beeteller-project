@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
-
 import { DashboardCard } from "./DashboardCard/DashboardCard";
-
 import { Grid } from "@mui/material";
+
 import { StyledTypography, CustomerName, GridStyled } from "./Dashboard.styles";
 
 import { api } from "../../lib/axios";
@@ -10,6 +9,7 @@ import { api } from "../../lib/axios";
 import walletSVG from "../../assets/wallet.svg";
 import investimentsSVG from "../../assets/investiments.svg";
 import creditCardSVG from "../../assets/credit_card.svg";
+
 
 type DataProps = {
   currentAccount: { balance: number };
@@ -24,7 +24,9 @@ export const Dashboard = () => {
     api.get("/dashboard").then((response) => setData(response.data));
   }, []);
 
+  
   return (
+
     <>
       <GridStyled>
         <Grid container alignItems={"center"}>
@@ -42,6 +44,7 @@ export const Dashboard = () => {
           subtitle={"Saldo disponível"}
           value={data?.currentAccount.balance || 0}
           icon={<img src={walletSVG} />}
+          isloading={!data ? true : false}
         />
         <DashboardCard
           showButton={false}
@@ -51,6 +54,7 @@ export const Dashboard = () => {
           subtitle={"Patrimônio"}
           value={data?.investimentAccount.amount || 0}
           icon={<img src={investimentsSVG} />}
+          isloading={!data ? true : false}
         />
         <DashboardCard
           width={320}
@@ -62,6 +66,7 @@ export const Dashboard = () => {
           subtitle={"Fatura atual"}
           value={data?.creditCard.currentInvoice || 0}
           icon={<img src={creditCardSVG} />}
+          isloading={!data ? true : false}
         />
       </Grid>
     </>

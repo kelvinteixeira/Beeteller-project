@@ -1,5 +1,5 @@
 import { ReactNode, useEffect, useState } from "react";
-import { Grid } from "@mui/material";
+import { Grid, Skeleton } from "@mui/material";
 import {
   GridStyled,
   StyledTitle,
@@ -17,12 +17,13 @@ import blackWalletSVG from "../../assets/blackwallet.svg";
 import blackInvestimentSVG from "../../assets/blackInvestment.svg";
 
 type AccountMovimentationItems = {
-  id: number;
+  movimentId: number;
   account: string;
   compensationType: string;
   description: string;
   amount: number;
   icon: ReactNode;
+  isLoading?: boolean;
 };
 
 export const AccountMovimentation = () => {
@@ -41,39 +42,58 @@ export const AccountMovimentation = () => {
       </GridStyled>
       {data.map((item) => (
         <CardMovimentation
-          key={item.id}
-          container
-          alignContent={"center"}
-          justifyContent={"space-between"}
+          className={"card-movimentation"}
+          key={item.movimentId}
         >
           <StyledBox>
             <img
+            style={{
+              width: 24
+            }}
               src={
                 item.account === "CURRENT"
                   ? blackWalletSVG
                   : blackInvestimentSVG
               }
             />
-            <StyledCardTitle sx={{ marginLeft: 1, lineHeight: 2 }}>
-              {item.account === "CURRENT"
-                ? "Conta corrente"
-                : "Conta investimento"}
-            </StyledCardTitle>
+
+            {!data ? (
+              <Skeleton
+                animation="wave"
+                variant="text"
+                width={80}
+                sx={{ marginLeft: 1 }}
+              />
+            ) : (
+              <StyledCardTitle sx={{ marginLeft: 1, lineHeight: 2 }}>
+                {item.account === "CURRENT"
+                  ? "Conta corrente"
+                  : "Conta investimento"}
+              </StyledCardTitle>
+            )}
           </StyledBox>
-          <StyledCardTitle sx={{ lineHeight: 2 }}>
-            {item.description}
-          </StyledCardTitle>
-          <StyledCardValue
-          sx={{ lineHeight: 2 }}
-            className={
-              item.compensationType === "CREDIT"
-                ? "positive-value"
-                : "negative-value"
-            }
-          >
-            {item.compensationType === "CREDIT" ? "+ " : "- "}
-            R$ {formatCurrencyBRL(item.amount)}
-          </StyledCardValue>
+          {!data ? (
+            <Skeleton animation="wave" variant="text" width="30%" />
+          ) : (
+            <StyledCardTitle sx={{ lineHeight: 2 }}>
+              {item.description}
+            </StyledCardTitle>
+          )}
+          {!data ? (
+            <Skeleton animation="wave" variant="text" width="10%" />
+          ) : (
+            <StyledCardValue
+              sx={{ lineHeight: 2 }}
+              className={
+                item.compensationType === "CREDIT"
+                  ? "positive-value"
+                  : "negative-value"
+              }
+            >
+              {item.compensationType === "CREDIT" ? "+ " : "- "}
+              R$ {formatCurrencyBRL(item.amount)}
+            </StyledCardValue>
+          )}
         </CardMovimentation>
       ))}
     </Grid>

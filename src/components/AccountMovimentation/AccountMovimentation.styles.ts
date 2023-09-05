@@ -12,17 +12,32 @@ export const StyledTitle = styled(Typography)`
 export const StyledSubtitle = styled(Typography)`
   color: #666666;
   font-weight: 600;
-  font-size: .9rem;
+  font-size: 0.9rem;
 `;
 
-export const CardMovimentation = styled(Grid)`
+export const CardMovimentation = styled(Box)`
+  @media (max-width: 850px) {
+    width: 44rem;
+  }
+
+  @media (max-width: 740px) {
+    width: 35rem;
+    grid-template-columns: 1fr 1fr auto;
+  }
+  @media (max-width: 575px) {
+    width: 35rem;
+  }
   width: 51rem;
   height: 5rem;
-  background-color: #E0E0E0;
-  border-radius: .5rem;
+  background-color: #e0e0e0;
+  border-radius: 0.5rem;
   padding: 1.5rem;
   margin-bottom: 1rem;
-  grid-column: 2fr 2fr auto;
+  text-align: left;
+  place-items: left;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr auto;
 `;
 
 export const StyledBox = styled(Box)`
@@ -32,12 +47,12 @@ export const StyledBox = styled(Box)`
 
 export const StyledCardTitle = styled(Typography)`
   font-weight: 600;
-  font-size: .9rem;  display: flex;
+  font-size: 0.9rem;
+  display: flex;
   justify-content: flex-start;
-  align-items: flex-start;
+  text-align: left;
 `;
 export const StyledCardValue = styled(Typography)`
   font-weight: 600;
-  font-size: .9rem;
-
+  font-size: 0.9rem;
 `;

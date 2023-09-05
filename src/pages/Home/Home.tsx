@@ -9,7 +9,7 @@ export const Home = () => {
       <Dashboard />
       <Grid container justifyContent={"space-between"}>
         <AccountMovimentation />
-        <OffersCard />
+        <OffersCard isLoading />
       </Grid>
     </Container>
   );
