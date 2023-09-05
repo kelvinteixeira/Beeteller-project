@@ -10,7 +10,6 @@ import walletSVG from "../../assets/wallet.svg";
 import investimentsSVG from "../../assets/investiments.svg";
 import creditCardSVG from "../../assets/credit_card.svg";
 
-
 type DataProps = {
   currentAccount: { balance: number };
   investimentAccount: { amount: number };
@@ -24,9 +23,7 @@ export const Dashboard = () => {
     api.get("/dashboard").then((response) => setData(response.data));
   }, []);
 
-  
   return (
-
     <>
       <GridStyled>
         <Grid container alignItems={"center"}>

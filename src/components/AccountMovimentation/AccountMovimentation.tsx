@@ -1,20 +1,14 @@
 import { ReactNode, useEffect, useState } from "react";
-import { Grid, Skeleton } from "@mui/material";
+import { Grid } from "@mui/material";
 import {
   GridStyled,
   StyledTitle,
   StyledSubtitle,
-  CardMovimentation,
-  StyledBox,
-  StyledCardTitle,
-  StyledCardValue,
 } from "./AccountMovimentation.styles";
 
 import { api } from "../../lib/axios";
-import { formatCurrencyBRL } from "../../utils/currency";
-
-import blackWalletSVG from "../../assets/blackwallet.svg";
-import blackInvestimentSVG from "../../assets/blackInvestment.svg";
+import { CardMovimentationSkelleton } from "../AccountMovimentation/CardMovimentation/CardMovimentationSkeleton";
+import { CardMovimentation } from "./CardMovimentation/CardMovimentation";
 
 type AccountMovimentationItems = {
   movimentId: number;
@@ -23,15 +17,27 @@ type AccountMovimentationItems = {
   description: string;
   amount: number;
   icon: ReactNode;
-  isLoading?: boolean;
 };
 
+// const data = [
+//   {
+//     movimentId: 1,
+//     account: "INVESTIMENT",
+//     compensationType: "CREDIT",
+//     description: "Pix de fulano",
+//     amount: 10000,
+//   },
+// ];
+
 export const AccountMovimentation = () => {
-  const [data, setData] = useState<Array<AccountMovimentationItems>>([]);
+  const [data, setData] = useState<Array<AccountMovimentationItems>>();
 
   useEffect(() => {
     api.get("/movement").then((response) => setData(response.data));
   }, []);
+
+  if (!data) return <CardMovimentationSkelleton />;
+
   return (
     <Grid>
       <GridStyled>
@@ -40,61 +46,11 @@ export const AccountMovimentation = () => {
           <StyledSubtitle>&nbsp; Últimas movimentações</StyledSubtitle>
         </Grid>
       </GridStyled>
-      {data.map((item) => (
+      {data.map((items) => (
         <CardMovimentation
-          className={"card-movimentation"}
-          key={item.movimentId}
-        >
-          <StyledBox>
-            <img
-            style={{
-              width: 24
-            }}
-              src={
-                item.account === "CURRENT"
-                  ? blackWalletSVG
-                  : blackInvestimentSVG
-              }
-            />
-
-            {!data ? (
-              <Skeleton
-                animation="wave"
-                variant="text"
-                width={80}
-                sx={{ marginLeft: 1 }}
-              />
-            ) : (
-              <StyledCardTitle sx={{ marginLeft: 1, lineHeight: 2 }}>
-                {item.account === "CURRENT"
-                  ? "Conta corrente"
-                  : "Conta investimento"}
-              </StyledCardTitle>
-            )}
-          </StyledBox>
-          {!data ? (
-            <Skeleton animation="wave" variant="text" width="30%" />
-          ) : (
-            <StyledCardTitle sx={{ lineHeight: 2 }}>
-              {item.description}
-            </StyledCardTitle>
-          )}
-          {!data ? (
-            <Skeleton animation="wave" variant="text" width="10%" />
-          ) : (
-            <StyledCardValue
-              sx={{ lineHeight: 2 }}
-              className={
-                item.compensationType === "CREDIT"
-                  ? "positive-value"
-                  : "negative-value"
-              }
-            >
-              {item.compensationType === "CREDIT" ? "+ " : "- "}
-              R$ {formatCurrencyBRL(item.amount)}
-            </StyledCardValue>
-          )}
-        </CardMovimentation>
+          {...items}
+          key={items.movimentId}
+        />
       ))}
     </Grid>
   );

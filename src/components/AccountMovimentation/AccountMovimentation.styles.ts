@@ -1,4 +1,4 @@
-import { Box, Grid, Typography, styled } from "@mui/material";
+import { Box, Card, Grid, Typography, styled } from "@mui/material";
 
 export const GridStyled = styled(Grid)`
   padding: 1rem 0 1rem 0;
@@ -15,7 +15,7 @@ export const StyledSubtitle = styled(Typography)`
   font-size: 0.9rem;
 `;
 
-export const CardMovimentation = styled(Box)`
+export const StyledCardMovimentation = styled(Card)`
   @media (max-width: 850px) {
     width: 44rem;
   }

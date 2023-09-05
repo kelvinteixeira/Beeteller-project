@@ -1,27 +1,25 @@
-# React + TypeScript + Vite
+# Beeteller Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Sobre o projeto:
+O objetivo dessa aplicação foi feita com avaliação técnica da seleção para vaga de desenvolver Front-end. Consite em simular uma aplicação bancaria, onde é visuzaliado extratos, investimentos, movimentaçãoes dentre outros.
 
-Currently, two official plugins are available:
+#### <div align="right">- Projeto Finalizado 🟢 <div>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React
+- Vite
+- Typescript
+- Vite
+- CSS
+- Styled components
+- Material UI
+- Axios
 
-## Expanding the ESLint configuration
+#### <div align="center">Aplicação desenvolvida por mim. Gostou? tem alguma sugestão de melhoria? por favor, entre em contato e ja me adiciona. :D
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+<div>
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+<div align="center"> 
+  <a href="https://instagram.com/kelvinteixeira_" target="_blank"><img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" target="_blank"></a>
+  <a href = "mailto:kelvin.teixeira.santos@gmail.com"><img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
+  <a href="https://www.linkedin.com/in/kelvin-teixeira-8707b41a8/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
+  </div>
