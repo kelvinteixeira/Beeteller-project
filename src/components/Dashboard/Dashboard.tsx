@@ -42,8 +42,8 @@ export const Dashboard = () => {
           subtitle={"Patrimônio"}
           value={data?.investimentAccount.amount || 0}
           icon={<img src={investimentsSVG} />}
-        /> 
-         <DashboardCard
+        />
+        <DashboardCard
           showButton
           width={320}
           height={244}

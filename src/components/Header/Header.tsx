@@ -17,7 +17,7 @@ import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import DragHandleIcon from "@mui/icons-material/DragHandle";
 
 import beetellerLogoSVG from "../../assets/Beeteller.svg";
-import userImageProfile from "../../assets/avatar.jpg";
+
 import { StyledButton } from "./Header.styles";
 import { api } from "../../lib/axios";
 
@@ -48,6 +48,7 @@ export const Header = () => {
     <AppBar
       position="static"
       variant="outlined"
+      elevation={0}
       sx={{ backgroundColor: "#EDEDED" }}
     >
       <Container maxWidth="xl">
@@ -120,6 +121,7 @@ export const Header = () => {
                   sx={{ marginRight: 3 }}
                   animation="wave"
                   width="10%"
+                  key={page}
                 />
               ) : (
                 <StyledButton
@@ -159,7 +161,7 @@ export const Header = () => {
               <Avatar
                 sx={{ width: 56, height: 56 }}
                 alt="Foto do usuário"
-                src={userImageProfile}
+                src="/avatar.jpg"
               />
             </IconButton>
             <Menu
