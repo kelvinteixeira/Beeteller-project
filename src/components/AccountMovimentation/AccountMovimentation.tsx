@@ -1,4 +1,4 @@
-import {  useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import { api } from "../../lib/axios";
 import { CardMovimentationSkelleton } from "../AccountMovimentation/CardMovimentation/CardMovimentationSkeleton";
@@ -19,7 +19,15 @@ export const AccountMovimentation = () => {
     api.get("/movement").then((response) => setData(response.data));
   }, []);
 
-  if (!data) return <CardMovimentationSkelleton />;
+  if (!data)
+    return (
+      <>
+        <CardMovimentationSkelleton />
+        <CardMovimentationSkelleton />
+        <CardMovimentationSkelleton />
+        <CardMovimentationSkelleton />
+      </>
+    );
 
   return (
     <>
