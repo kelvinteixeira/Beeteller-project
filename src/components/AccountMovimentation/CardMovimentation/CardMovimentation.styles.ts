@@ -10,9 +10,8 @@ export const StyledTitle = styled(Typography)`
   font-size: 1.5rem;
 `;
 export const StyledSubtitle = styled(Typography)`
-  color: #666666;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 1.5rem;
 `;
 
 export const StyledCardMovimentation = styled(Card)`
@@ -25,7 +24,7 @@ export const StyledCardMovimentation = styled(Card)`
     grid-template-columns: 1fr 1fr auto;
   }
   @media (max-width: 575px) {
-    width: 35rem;
+    width: 25rem;
   }
   width: 51rem;
   height: 5rem;
@@ -46,6 +45,9 @@ export const StyledBox = styled(Box)`
 `;
 
 export const StyledCardTitle = styled(Typography)`
+@media (max-width: 600px) {
+   display: none;
+}
   font-weight: 600;
   font-size: 0.9rem;
   display: flex;

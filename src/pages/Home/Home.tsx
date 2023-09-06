@@ -2,11 +2,7 @@ import { Box, Container, Grid } from "@mui/material";
 import { Dashboard } from "../../components/Dashboard/Dashboard";
 import { AccountMovimentation } from "../../components/AccountMovimentation/AccountMovimentation";
 import { Offers } from "../../components/Offers/Offers";
-import {
-  StyledTitle,
-  GridStyled,
-  StyledSubtitle,
-} from "./Home.styles"
+import { StyledTitle, GridStyled, StyledSubtitle } from "./Home.styles";
 
 export const Home = () => {
   return (
@@ -20,23 +16,17 @@ export const Home = () => {
       </GridStyled>
       <Dashboard />
       <Grid container justifyContent={"space-between"}>
-        <Grid
-          container
-          justifyContent={"space-between"}
-          sx={{ marginBottom: 2 }}
-        >
+        <Box>
           <Box sx={{ display: "flex", alignItems: "center" }}>
             <StyledTitle>Conta digital</StyledTitle>
             <StyledSubtitle>&nbsp; Últimas movimentações</StyledSubtitle>
           </Box>
-          <StyledTitle sx={{ marginRight: 13 }}>Ofertas para você</StyledTitle>
-        </Grid>
-      </Grid>
-      <Grid container justifyContent={"space-between"}>
-        <Box>
           <AccountMovimentation />
         </Box>
-        <Offers />
+        <Grid>
+          <StyledTitle sx={{ marginRight: 13 }}>Ofertas para você</StyledTitle>
+          <Offers />
+        </Grid>
       </Grid>
     </Container>
   );
