@@ -7,7 +7,7 @@ import {
   OffersValue,
   StyledCard,
   StyledButton,
-} from "../Offers.styles";
+} from "./OffersCard.styles";
 
 import { formatCurrencyBRL } from "../../../utils/currency";
 

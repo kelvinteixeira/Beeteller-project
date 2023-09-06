@@ -1,5 +1,5 @@
 import { Skeleton } from "@mui/material";
-import { StyledCardMovimentation, StyledBox } from "../AccountMovimentation.styles";
+import { StyledCardMovimentation, StyledBox } from "../CardMovimentation/CardMovimentation.styles";
 
 export const CardMovimentationSkelleton = () => {
   return (

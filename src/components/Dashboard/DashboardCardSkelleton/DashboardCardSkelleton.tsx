@@ -1,5 +1,5 @@
 import { Grid, Skeleton } from "@mui/material";
-import { StyledCard, StyledBox } from "./DashboardCard.styles";
+import { StyledCard, StyledBox } from "../DashboardCard/DashboardCard.styles";
 
 export const DashboardCardSkelleton = () => {
   return (

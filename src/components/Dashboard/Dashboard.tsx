@@ -7,7 +7,7 @@ import { api } from "../../lib/axios";
 import walletSVG from "../../assets/wallet.svg";
 import investimentsSVG from "../../assets/investiments.svg";
 import creditCardSVG from "../../assets/credit_card.svg";
-import { DashboardCardSkelleton } from "./DashboardCard/DashboardCardSkelleton";
+import { DashboardCardSkelleton } from "./DashboardCardSkelleton/DashboardCardSkelleton";
 
 type DataProps = {
   currentAccount: { balance: number };

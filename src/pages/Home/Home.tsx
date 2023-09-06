@@ -4,23 +4,19 @@ import { AccountMovimentation } from "../../components/AccountMovimentation/Acco
 import { Offers } from "../../components/Offers/Offers";
 import {
   StyledTitle,
-  StyledSubtitle,
-} from "../../components/AccountMovimentation/AccountMovimentation.styles";
-import {
-  CustomerName,
   GridStyled,
-  StyledTypography,
-} from "../../components/Dashboard/Dashboard.styles";
+  StyledSubtitle,
+} from "./Home.styles"
 
 export const Home = () => {
   return (
     <Container>
       <GridStyled>
         <Grid container alignItems={"center"}>
-          <StyledTypography>Olá,</StyledTypography>
-          <CustomerName>&nbsp;Kelvin</CustomerName>
+          <StyledSubtitle>Olá,</StyledSubtitle>
+          <StyledTitle>&nbsp;Kelvin</StyledTitle>
         </Grid>
-        <StyledTypography>Seja bem vindo a sua conta digital</StyledTypography>
+        <StyledSubtitle>Seja bem vindo a sua conta digital</StyledSubtitle>
       </GridStyled>
       <Dashboard />
       <Grid container justifyContent={"space-between"}>

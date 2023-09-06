@@ -1,5 +1,5 @@
 import { Skeleton, CardContent, Grid } from "@mui/material"
-import { StyledCard } from "../Offers.styles"
+import { StyledCard } from "../OffersCard/OffersCard.styles"
 
 export const OffersCardSkelleton = () => {
   return (

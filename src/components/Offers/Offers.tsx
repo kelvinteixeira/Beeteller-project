@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { OffersCard } from "./OffersCard/OffersCard";
 
 import { api } from "../../lib/axios";
-import { OffersCardSkelleton } from "./OffersCard/OffersCardSkelleton";
+import { OffersCardSkelleton } from "./OffersCardSkelleton/OffersCardSkelleton";
 
 type OffersProps = {
   offers: {

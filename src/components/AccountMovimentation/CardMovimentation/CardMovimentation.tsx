@@ -4,7 +4,7 @@ import {
   StyledCardTitle,
   StyledCardValue,
   StyledCardMovimentation,
-} from "../AccountMovimentation.styles";
+} from "./CardMovimentation.styles";
 import blackWalletSVG from "../../../assets/blackwallet.svg";
 import blackInvestimentSVG from "../../../assets/blackInvestment.svg";
 

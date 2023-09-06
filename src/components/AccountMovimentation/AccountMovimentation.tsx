@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 import { api } from "../../lib/axios";
-import { CardMovimentationSkelleton } from "../AccountMovimentation/CardMovimentation/CardMovimentationSkeleton";
+import { CardMovimentationSkelleton } from "./CardMovimentationSkelleton/CardMovimentationSkeleton";
 import { CardMovimentation } from "./CardMovimentation/CardMovimentation";
 
 type DataProps = {
