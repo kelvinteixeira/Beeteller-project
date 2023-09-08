@@ -24,6 +24,7 @@ export const Dashboard = () => {
     <>
       <Grid container justifyContent={"space-between"} alignItems={"center"}>
         <DashboardCard
+          data-testid="currentAccount-card"
           width={448}
           height={244}
           title={"Conta corrente"}
@@ -32,6 +33,7 @@ export const Dashboard = () => {
           icon={<img src={walletSVG} />}
         />
         <DashboardCard
+          data-testid="investiment-card"
           width={344}
           height={244}
           title={"Investimentos"}
@@ -40,6 +42,7 @@ export const Dashboard = () => {
           icon={<img src={investimentsSVG} />}
         />
         <DashboardCard
+          data-testid="creditInfo-card"
           showButton
           width={320}
           height={244}

@@ -21,7 +21,7 @@ import beetellerLogoSVG from "../../assets/Beeteller.svg";
 import { StyledButton } from "./Header.styles";
 import { api } from "../../lib/axios";
 
-const pages = ["Home", "Extrato", "Área pix", "Cartão de crédito"];
+const pages = ["Home", "Extrato", "Área Pix", "Cartão de crédito"];
 
 export const Header = () => {
   const [data, setData] = useState();
