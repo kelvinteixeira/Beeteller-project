@@ -1,4 +1,4 @@
-import { AccountType, CompensationType } from "./constants";
+import { AccountTypeEnum, CompensationTypeEnum } from "./constants";
 
 export type DashboardReponseType = {
   currentAccount: { balance: number };
@@ -8,8 +8,8 @@ export type DashboardReponseType = {
 
 export type AccountMovimentationResponseType = {
   movimentId: number;
-  account: AccountType;
-  compensationType: CompensationType;
+  account: AccountTypeEnum;
+  compensationType: CompensationTypeEnum;
   description: string;
   amount: number;
 };
