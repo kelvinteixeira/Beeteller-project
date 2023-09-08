@@ -24,7 +24,7 @@ O objetivo dessa aplicação foi feita com avaliação técnica da seleção par
   - Abra o terminal
   - Clone o repositório para um sua maquina usando Git clone https://github.com/kelvinteixeira/Beeteller-project.git em um local de preferência na sua maquina. 
   - Acesse a pasta que foi criada contendo o repositório
-  - Instale as dependências usando o comando yarn ou nom install
+  - Instale as dependências usando o comando yarn ou npm install
   - Rode a aplicação usando comando yarn dev
 
 #### <div align="center">Aplicação desenvolvida por mim. Gostou? tem alguma sugestão de melhoria? por favor, entre em contato e ja me adiciona. :D
