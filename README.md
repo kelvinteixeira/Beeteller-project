@@ -7,6 +7,7 @@ O objetivo dessa aplicação foi feita com avaliação técnica da seleção par
 
 #### <div align="right">- Projeto Finalizado 🟢 <div>
 
+## Tecnologias usadas
 - React
 - Vite
 - Typescript
