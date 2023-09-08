@@ -4,16 +4,10 @@ import { api } from "../../lib/axios";
 import { CardMovimentationSkelleton } from "./CardMovimentationSkelleton/CardMovimentationSkeleton";
 import { CardMovimentation } from "./CardMovimentation/CardMovimentation";
 
-type DataProps = {
-  movimentId: number;
-  account: string;
-  compensationType: string;
-  description: string;
-  amount: number;
-};
+import { AccountMovimentationResponseType } from "../../Global/types";
 
 export const AccountMovimentation = () => {
-  const [data, setData] = useState<Array<DataProps>>();
+  const [data, setData] = useState<Array<AccountMovimentationResponseType>>();
 
   useEffect(() => {
     api.get("/movement").then((response) => setData(response.data));

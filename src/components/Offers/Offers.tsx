@@ -4,17 +4,10 @@ import { OffersCard } from "./OffersCard/OffersCard";
 import { api } from "../../lib/axios";
 import { OffersCardSkelleton } from "./OffersCardSkelleton/OffersCardSkelleton";
 
-type OffersProps = {
-  offers: {
-    offerType: string;
-    title: string;
-    subtitle: string;
-    amount: number;
-  }[];
-};
+import { OffersReponseType } from "src/Global/types";
 
 export const Offers = () => {
-  const [data, setData] = useState<OffersProps>();
+  const [data, setData] = useState<OffersReponseType>();
   useEffect(() => {
     api.get("/offers").then((response) => setData(response.data));
   }, []);

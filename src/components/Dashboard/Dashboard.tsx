@@ -9,14 +9,10 @@ import investimentsSVG from "../../assets/investiments.svg";
 import creditCardSVG from "../../assets/credit_card.svg";
 import { DashboardCardSkelleton } from "./DashboardCardSkelleton/DashboardCardSkelleton";
 
-type DataProps = {
-  currentAccount: { balance: number };
-  investimentAccount: { amount: number };
-  creditCard: { currentInvoice: number };
-};
+import { DashboardReponseType } from "src/Global/types";
 
 export const Dashboard = () => {
-  const [data, setData] = useState<DataProps | null>(null);
+  const [data, setData] = useState<DashboardReponseType | null>(null);
 
   useEffect(() => {
     api.get("/dashboard").then((response) => setData(response.data));

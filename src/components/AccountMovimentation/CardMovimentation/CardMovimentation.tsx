@@ -7,6 +7,7 @@ import {
 } from "./CardMovimentation.styles";
 import blackWalletSVG from "../../../assets/blackwallet.svg";
 import blackInvestimentSVG from "../../../assets/blackInvestment.svg";
+import { AccountTypeEnum, CompensationTypeEnum } from "../../../Global/constants";
 
 type AccountMovimentationProps = {
   movimentId: number;
@@ -29,12 +30,12 @@ export const CardMovimentation = (props: AccountMovimentationProps) => {
             width: 24,
           }}
           src={
-            props.account === "CURRENT" ? blackWalletSVG : blackInvestimentSVG
+            props.account === AccountTypeEnum.CURRENT ? blackWalletSVG : blackInvestimentSVG
           }
         />
 
         <StyledCardTitle sx={{ marginLeft: 1, lineHeight: 2 }}>
-          {props.account === "CURRENT"
+          {props.account === AccountTypeEnum.CURRENT
             ? "Conta corrente"
             : "Conta investimento"}
         </StyledCardTitle>
@@ -47,12 +48,12 @@ export const CardMovimentation = (props: AccountMovimentationProps) => {
       <StyledCardValue
         sx={{ lineHeight: 2 }}
         className={
-          props.compensationType === "CREDIT"
+          props.compensationType === CompensationTypeEnum.CREDIT
             ? "positive-value"
             : "negative-value"
         }
       >
-        {props.compensationType === "CREDIT" ? "+ " : "- "}
+        {props.compensationType === CompensationTypeEnum.CREDIT ? "+ " : "- "}
         R$ {formatCurrencyBRL(props.amount)}
       </StyledCardValue>
     </StyledCardMovimentation>
