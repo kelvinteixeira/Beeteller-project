@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif !important;
+}
+
+html {
+  background-color: #ededed;
+}
+
+.negative-value {
+  color: red;
+}
+
+.positive-value {
+  color: green;
+}
+
+.image-container {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.5s ease;
+}
+.zoom-img {
+  filter: sepia(40%) saturate(150%);
+  transform: scale(1.4);
+}
+
+.fade-down {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease-in-out;
+}
+
+.fade-down.show {
+  opacity: 1;
+  transform: translateY(0);
+  transform-origin: top;
+  transition: transform 0.5s ease-in-out;
+}
+
+.button-container {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.5s ease;
+}
+
+.fullwidth-button {
+  animation: increaseWidth 0.5s ease-in-out;
+  overflow: hidden;
+  transform-origin: right;
+  width: 100%;
+}
+
+@keyframes increaseWidth {
+  0% {
+    width: 50%;
+    left: 0;
+  }
+  100% {
+    width: 100%;
+    left: 0;
+  }
+}
+
+.card-dashboard {
+  transition: background-color .5s ease;
+  background: #2f2f2f;
+}
+
+.card-dashboard:hover {
+  background: radial-gradient(circle at 62.73% 84.98%, #323534 0, #2f2f2f 50%, #2c292a 100%);
+}
+
+.card-movimentation {
+  transition: background-color 0.5s ease;
+  background: #e0e0e0;
+}
+.card-movimentation:hover {
+  background: #c0c0c0;
+}
