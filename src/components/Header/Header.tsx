@@ -10,6 +10,7 @@ import {
   Avatar,
   MenuItem,
   Skeleton,
+  useMediaQuery,
 } from "@mui/material";
 
 import MenuIcon from "@mui/icons-material/Menu";
@@ -27,6 +28,7 @@ export const Header = () => {
   const [data, setData] = useState();
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
   const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
+  const isSmallScreen = useMediaQuery("(max-width:450px)");
 
   useEffect(() => {
     api.get("/dashboard").then((response) => setData(response.data));
@@ -147,23 +149,27 @@ export const Header = () => {
             >
               <NotificationsNoneIcon sx={{ color: "#000000" }} />
             </IconButton>
-            <IconButton
-              sx={{
-                width: 56,
-                height: 56,
-                marginRight: 2,
-                backgroundColor: "#E0E0E0",
-              }}
-            >
-              <DragHandleIcon sx={{ color: "#000000" }} />
-            </IconButton>
-            <IconButton>
-              <Avatar
-                sx={{ width: 56, height: 56 }}
-                alt="Foto do usuário"
-                src="/avatar.jpg"
-              />
-            </IconButton>
+            {isSmallScreen ? null : (
+              <>
+                <IconButton
+                  sx={{
+                    width: 56,
+                    height: 56,
+                    marginRight: 2,
+                    backgroundColor: "#E0E0E0",
+                  }}
+                >
+                  <DragHandleIcon sx={{ color: "#000000" }} />
+                </IconButton>
+                <IconButton>
+                  <Avatar
+                    sx={{ width: 56, height: 56 }}
+                    alt="Foto do usuário"
+                    src="/avatar.jpg"
+                  />
+                </IconButton>
+              </>
+            )}
             <Menu
               sx={{ mt: "45px" }}
               id="menu-appbar"

@@ -8,6 +8,7 @@ import {
 import blackWalletSVG from "../../../assets/blackwallet.svg";
 import blackInvestimentSVG from "../../../assets/blackInvestment.svg";
 import { AccountTypeEnum, CompensationTypeEnum } from "../../../Global/constants";
+import { useMediaQuery } from "@mui/material";
 
 type AccountMovimentationProps = {
   movimentId: number;
@@ -18,6 +19,8 @@ type AccountMovimentationProps = {
 };
 
 export const CardMovimentation = (props: AccountMovimentationProps) => {
+  const isSmallScreen = useMediaQuery("(max-width:450px)");
+
   return (
     <StyledCardMovimentation
       
@@ -42,7 +45,7 @@ export const CardMovimentation = (props: AccountMovimentationProps) => {
       </StyledBox>
 
       <StyledCardTitle sx={{ lineHeight: 2 }}>
-        {props.description}
+        {isSmallScreen ? "Nova Transação" : props.description}
       </StyledCardTitle>
 
       <StyledCardValue

@@ -26,6 +26,9 @@ export const StyledCardMovimentation = styled(Card)`
   @media (max-width: 575px) {
     width: 25rem;
   }
+  @media (max-width: 450px) {
+    width: 22rem;
+  }
   width: 51rem;
   height: 5rem;
   background-color: #e0e0e0;
