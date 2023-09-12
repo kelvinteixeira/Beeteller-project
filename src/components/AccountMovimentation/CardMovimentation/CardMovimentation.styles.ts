@@ -23,11 +23,13 @@ export const StyledCardMovimentation = styled(Card)`
     width: 35rem;
     grid-template-columns: 1fr 1fr auto;
   }
-  @media (max-width: 575px) {
+  @media (max-width: 600px) {
     width: 25rem;
+    grid-template-columns: 1fr  auto;
   }
   @media (max-width: 450px) {
     width: 22rem;
+    grid-template-columns: 1fr  auto;
   }
   width: 51rem;
   height: 5rem;
@@ -48,6 +50,14 @@ export const StyledBox = styled(Box)`
 `;
 
 export const StyledCardTitle = styled(Typography)`
+
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: flex-start;
+  text-align: left;
+`;
+export const StyledCardSubtitle = styled(Typography)`
 @media (max-width: 600px) {
    display: none;
 }

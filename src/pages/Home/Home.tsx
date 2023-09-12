@@ -25,7 +25,7 @@ export const Home = () => {
         </Box>
         <Grid>
           <StyledTitle sx={{ marginRight: 13 }}>Ofertas para você</StyledTitle>
-          <Offers />
+            <Offers />
         </Grid>
       </Grid>
     </Container>

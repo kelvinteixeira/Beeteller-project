@@ -4,10 +4,14 @@ import {
   StyledCardTitle,
   StyledCardValue,
   StyledCardMovimentation,
+  StyledCardSubtitle,
 } from "./CardMovimentation.styles";
 import blackWalletSVG from "../../../assets/blackwallet.svg";
 import blackInvestimentSVG from "../../../assets/blackInvestment.svg";
-import { AccountTypeEnum, CompensationTypeEnum } from "../../../Global/constants";
+import {
+  AccountTypeEnum,
+  CompensationTypeEnum,
+} from "../../../Global/constants";
 import { useMediaQuery } from "@mui/material";
 
 type AccountMovimentationProps = {
@@ -23,7 +27,6 @@ export const CardMovimentation = (props: AccountMovimentationProps) => {
 
   return (
     <StyledCardMovimentation
-      
       className={"card-movimentation"}
       key={props.movimentId}
     >
@@ -33,10 +36,11 @@ export const CardMovimentation = (props: AccountMovimentationProps) => {
             width: 24,
           }}
           src={
-            props.account === AccountTypeEnum.CURRENT ? blackWalletSVG : blackInvestimentSVG
+            props.account === AccountTypeEnum.CURRENT
+              ? blackWalletSVG
+              : blackInvestimentSVG
           }
         />
-
         <StyledCardTitle sx={{ marginLeft: 1, lineHeight: 2 }}>
           {props.account === AccountTypeEnum.CURRENT
             ? "Conta corrente"
@@ -44,9 +48,9 @@ export const CardMovimentation = (props: AccountMovimentationProps) => {
         </StyledCardTitle>
       </StyledBox>
 
-      <StyledCardTitle sx={{ lineHeight: 2 }}>
-        {isSmallScreen ? "Nova Transação" : props.description}
-      </StyledCardTitle>
+      <StyledCardSubtitle sx={{ lineHeight: 2 }}>
+        {props.description}
+      </StyledCardSubtitle>
 
       <StyledCardValue
         sx={{ lineHeight: 2 }}

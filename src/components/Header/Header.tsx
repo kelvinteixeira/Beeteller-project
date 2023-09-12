@@ -51,7 +51,7 @@ export const Header = () => {
       position="static"
       variant="outlined"
       elevation={0}
-      sx={{ backgroundColor: "#EDEDED" }}
+      sx={{ backgroundColor: "#EDEDED", padding: 1 }}
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
