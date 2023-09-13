@@ -20,12 +20,27 @@ O objetivo dessa aplicação foi feita com avaliação técnica da seleção par
 - React Testing library
 - Mock Service Worker
 
-## Para rodar o projeto local
-  - Abra o terminal
-  - Clone o repositório para um sua maquina usando Git clone https://github.com/kelvinteixeira/Beeteller-project.git em um local de preferência na sua maquina. 
-  - Acesse a pasta que foi criada contendo o repositório
-  - Instale as dependências usando o comando yarn ou npm install
-  - Rode a aplicação usando comando yarn dev
+## Requisitos
+Para executar a aplicação é necessário instalar algumas ferramentas tais como um editor de códigos para realizar compilação dos mesmos. Nesse projeto foi utilizado o [Visual Studio Code](https://code.visualstudio.com/), [NodeJS](https://nodejs.org/en/) para compilação do código, [Git Bash](https://gitforwindows.org/) para baixar o repositório e baixar todas as dependências necessárias.
+
+```bash
+# Baixe o repositório.
+$ git clone https://github.com/kelvinteixeira/Beeteller-project.git
+# Acesse a pasta do projeto.
+$ cd beeteller-project
+
+# Agora que baixou e acessou o repositório, vamos começar a instalação das dependências.
+$ yarn ( caso não utilize o yarn execute apenas npm install)
+
+# Depois de instalado todas as dependências, abra a aplicação via vscode.
+$ code .
+
+# Agore execute a aplicação.
+$ yarn dev (caso não utilize o yarn: npm run dev)
+
+# A aplicação iniciará na porta 5173
+# No navegador digite: http://localhost:5173/
+```
 
 #### <div align="center">Aplicação desenvolvida por mim. Gostou? tem alguma sugestão de melhoria? por favor, entre em contato e ja me adiciona. :D
 
